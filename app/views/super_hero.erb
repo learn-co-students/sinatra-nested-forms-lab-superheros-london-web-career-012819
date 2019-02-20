@@ -1,1 +1,29 @@
 
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <h1>Create a Team and Heroes!</h1>
+
+    <form action="/teams" method="post">
+      <h3>Team Name: <input name="team[name]"></input></h3>
+      <h3>Team Motto: <input name="team[motto]"></input></h3>
+
+      <% (1..3).each do |index| %>
+        <h2>Hero <%= index %></h2>
+
+        <h3>Hero's Name: <input name="team[members][][name]"></input></h3>
+        <h3>Hero's Power: <input name="team[members][][power]"></input></h3>
+        <h3>Hero's Biography: <input name="team[members][][biography]"></input></h3>
+      <%end %>
+
+      <input type="submit" value="Submit"></input>
+
+    </form>
+
+  </body>
+</html>
